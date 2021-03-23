@@ -1,12 +1,7 @@
-import { json } from 'body-parser';
-import express, { response } from 'express';
+import express from "express";
 
 const app = express();
 
-app.use(json);
-app.get('/', (request, reponse) => {
-
-    return response.json({ message: "Hello World"});
-});
-
-app.listen(3333);
+app.use(express.json());
+ 
+app.listen(3333, () => console.log("Server is running!"));
